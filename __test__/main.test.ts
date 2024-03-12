@@ -1,8 +1,15 @@
 import { describe, expect, test } from "@jest/globals";
-import sum from "..";
+import uuid from "..";
 
 describe("sum", () => {
-  test("adds 1 + 2 to equal 3", () => {
-    expect(sum(1, 2)).toBe(3);
+  test("generate v4 uuid", () => {
+    const UUID_REGEX = /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/;
+    expect(uuid()).toMatch(UUID_REGEX);
+  });
+  test("no repeat", () => {
+    const total = 1000;
+    let uuids = Array.from({ length: total }, () => uuid());
+    uuids = Array.from(new Set(uuids));
+    expect(uuids.length).toBe(total);
   });
 });

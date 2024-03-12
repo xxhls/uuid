@@ -1,3 +1,3 @@
-const sum = (a: number, b: number) => a + b;
+import uuid from "./src/main";
 
-export default sum;
+export default uuid;
