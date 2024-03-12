@@ -1,5 +1,5 @@
 {
-  "name": "xxhls-uuid",
+  "name": "@xxhls/uuid",
   "version": "1.0.0",
   "source": "index.ts",
   "main": "dist/index.js",
